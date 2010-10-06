@@ -11,7 +11,10 @@ sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
 
 #iptables
 curl $script_url/iptables-simple.sh|bash
-/sbin/iptables save
+/etc/init.d/iptables save
+
+# yum install
+yum -y install subversion
 
 # yum install httpd & php & mysql
 yum -y install httpd httpd-devel php php-pear php-devel php-dom php-mbstring php-mysql php-gd
