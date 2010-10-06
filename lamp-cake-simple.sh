@@ -13,6 +13,10 @@ sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
 curl $script_url/iptables-simple.sh|bash
 /etc/init.d/iptables save
 
+#stop ip6tables
+/etc/init.d/ip6tables stop
+/sbin/chkconfig ip6tables on
+
 # yum install
 yum -y install subversion
 
@@ -39,9 +43,9 @@ yes yes|pecl install apc
 echo "extension=apc.so" > /etc/php.d/apc.ini
 
 # pear/pecl command patch
-sed -i.org -e 's/16M/640M/' /usr/bin/pear
+sed -i.org -e 's/16M/512M/' /usr/bin/pear
 #chmod +x /usr/bin/pear-extend_memory_limit
-sed -i.org -e 's/16M/640M/' /usr/bin/pecl
+sed -i.org -e 's/16M/512M/' /usr/bin/pecl
 # chmod +x /usr/bin/pecl-extend_memory_limit
 
 # edit /etc/php.d/my.ini
