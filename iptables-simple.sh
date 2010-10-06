@@ -9,7 +9,6 @@ $IPT --delete-chain
 # Set default policies for all three default chains
 $IPT -P INPUT DROP
 $IPT -P FORWARD DROP
-$IPT -P OUTPUT DROP
 
 # Enable free use of loopback interfaces
 $IPT -A INPUT -i lo -j ACCEPT
