@@ -1,1 +1,4 @@
 This scripts was made based on http://github.com/tumf/UnitHosting
+
+h2. Usage
+@bash < <(curl http://github.com/k1LoW/sakuravps/raw/master/lamp-cake-simple.sh)@
