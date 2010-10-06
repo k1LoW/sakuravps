@@ -1,4 +1,10 @@
 #!/bin/bash
+#yum
+yum -y update
+
+#/etc/sysconfig/i18n
+sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
+
 # yum install httpd & php & mysql
 yum -y install httpd httpd-devel php php-pear php-devel php-dom php-mbstring php-mysql php-gd
 
@@ -42,7 +48,7 @@ EOF
 
 # yum install mysql
 yum -y install mysql mysql-server
-sed -i.orig -e "s/\[mysqld\]/\[mysqld\]\ndefault-character-set = utf8/" /etc/my.cnf
+sed -i.org -e "s/\[mysqld\]/\[mysqld\]\ndefault-character-set = utf8/" /etc/my.cnf
 cat >> /etc/my.cnf <<EOF
 [client]
 default-character-set = utf8
