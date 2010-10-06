@@ -15,7 +15,7 @@ curl $script_url/iptables-simple.sh|bash
 
 #stop ip6tables
 /etc/init.d/ip6tables stop
-/sbin/chkconfig ip6tables on
+/sbin/chkconfig ip6tables off
 
 # yum install
 yum -y install subversion
