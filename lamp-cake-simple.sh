@@ -1,9 +1,16 @@
 #!/bin/bash
+if [ -z $script_url ];then
+    export script_url="http://github.com/k1LoW/sakuravps/raw/master/"
+fi
+
 #yum
 yum -y update
 
 #/etc/sysconfig/i18n
 sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
+
+#iptables
+curl $script_url/iptables-simple.sh|bash
 
 # yum install httpd & php & mysql
 yum -y install httpd httpd-devel php php-pear php-devel php-dom php-mbstring php-mysql php-gd
