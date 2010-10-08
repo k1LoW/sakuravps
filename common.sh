@@ -9,5 +9,5 @@ sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
 /etc/init.d/ip6tables stop
 /sbin/chkconfig ip6tables off
 
-# yum install
+# yum install subversion
 yum -y install subversion
