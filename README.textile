@@ -4,8 +4,8 @@ h2. Usage
 
 h3. CakePHP on LAMP
 
-@bash < <(curl http://github.com/k1LoW/sakuravps/raw/master/lamp-cake-simple.sh)@
+@bash < <(curl http://github.com/k1LoW/sakuravps/raw/master/lamp-cake-centos-simple.sh)@
 
 h3. CakePHP on LAPP
 
-@bash < <(curl http://github.com/k1LoW/sakuravps/raw/master/lapp-cake-simple.sh)@
+@bash < <(curl http://github.com/k1LoW/sakuravps/raw/master/lapp-cake-centos-simple.sh)@
