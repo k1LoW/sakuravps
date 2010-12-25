@@ -1,10 +1,10 @@
 #!/bin/bash
 # yum install httpd & php & mysql & postgresql
-wget http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+wget http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 wget http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
-rpm -Uvh remi-release-5*.rpm epel-release-5*.rpm
-yum -y install httpd httpd-devel
-yum -y install --enablerepo=remi php php-pear php-devel php-dom php-mbstring php-mysql php-pgsql php-gd
+rpm -Uvh remi-release-5.rpm epel-release-5-4.rpm
+yum -y install httpd
+yum -y install --enablerepo=remi php php-pear php-devel php-dom php-mbstring php-mysql php-pgsql php-gd httpd-devel
 
 # virtual host
 cat <<EOF  > /etc/httpd/conf.d/virtualhosts.conf
