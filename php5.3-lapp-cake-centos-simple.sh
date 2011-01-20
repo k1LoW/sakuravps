@@ -14,7 +14,7 @@ curl $script_url/apache-php5.3.sh|bash
 #postgresql yum repogitory
 rpm -ivh http://yum.pgsqlrpms.org/reporpms/8.4/pgdg-centos-8.4-2.noarch.rpm
 
-# yum install mysql
+# yum install postgresql
 yum -y install postgresql-tcl postgresql-server postgresql-contrib postgresql
 /etc/init.d/postgresql initdb --no-locale -D /var/lib/pgsql/data/ -E UNICODE
 # mkdir /var/log/postgres
