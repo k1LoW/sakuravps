@@ -41,5 +41,9 @@ mbstring.language = Japanese
 mbstring.internal_encoding = utf-8
 EOF
 
+# timezone setting
+echo "[Date]
+date.timezone = Asia/Tokyo" > /etc/php.d/timezone.ini
+
 /sbin/chkconfig httpd on
 /etc/init.d/httpd start
