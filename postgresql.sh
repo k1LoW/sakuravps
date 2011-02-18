@@ -1,6 +1,6 @@
 #!/bin/bash
 #postgresql yum repogitory
-rpm -ivh http://yum.pgsqlrpms.org/reporpms/8.4/pgdg-centos-8.4-2.noarch.rpm
+rpm -ivh http://www.pgrpms.org/8.4/redhat/rhel-5-x86_64/postgresql-8.4.7-1PGDG.rhel5.x86_64.rpm
 
 # yum install mysql
 yum -y install postgresql-tcl postgresql-server postgresql-contrib postgresql
