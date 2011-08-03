@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ -z $script_url ];then
-    export script_url="https://github.com/k1LoW/sakuravps/raw/master/"
+    export script_url="https://github.com/k1LoW/sakuravps/master/"
 fi
 
 #common

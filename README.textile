@@ -4,16 +4,16 @@ h2. Usage
 
 h3. for CakePHP on LAMP
 
-@bash < <(curl https://github.com/k1LoW/sakuravps/raw/master/lamp-cake-centos-simple.sh)@
+@bash < <(curl https://github.com/k1LoW/sakuravps/master/lamp-cake-centos-simple.sh)@
 
 h3. for CakePHP on LAPP
 
-@bash < <(curl https://github.com/k1LoW/sakuravps/raw/master/lapp-cake-centos-simple.sh)@
+@bash < <(curl https://github.com/k1LoW/sakuravps/master/lapp-cake-centos-simple.sh)@
 
 h3. for CakePHP on LAMP (PHP5.3)
 
-@bash < <(curl https://github.com/k1LoW/sakuravps/raw/master/php5.3-lamp-cake-centos-simple.sh)@
+@bash < <(curl https://github.com/k1LoW/sakuravps/master/php5.3-lamp-cake-centos-simple.sh)@
 
 h3. for CakePHP on LAPP (PHP5.3)
 
-@bash < <(curl https://github.com/k1LoW/sakuravps/raw/master/php5.3-lapp-cake-centos-simple.sh)@
+@bash < <(curl https://github.com/k1LoW/sakuravps/master/php5.3-lapp-cake-centos-simple.sh)@
