@@ -9,11 +9,3 @@ h3. for CakePHP on LAMP
 h3. for CakePHP on LAPP
 
 @bash < <(curl https://raw.github.com/k1LoW/sakuravps/master/lapp-cake-centos-simple.sh)@
-
-h3. for CakePHP on LAMP (PHP5.3)
-
-@bash < <(curl https://raw.github.com/k1LoW/sakuravps/master/php5.3-lamp-cake-centos-simple.sh)@
-
-h3. for CakePHP on LAPP (PHP5.3)
-
-@bash < <(curl https://raw.github.com/k1LoW/sakuravps/master/php5.3-lapp-cake-centos-simple.sh)@
