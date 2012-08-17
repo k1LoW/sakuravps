@@ -12,3 +12,8 @@ curl $script_url/iptables-simple.sh|bash
 curl $script_url/apache-php.sh|bash
 #mysql
 curl $script_url/mysql.sh|bash
+
+# SElinux
+setsebool -P httpd_can_network_connect_db 1
+/etc/init.d/httpd restart
+/etc/init.d/mysqld restart

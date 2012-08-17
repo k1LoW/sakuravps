@@ -1,6 +1,6 @@
 #!/bin/bash
 # yum install httpd & php & mysql & postgresql
-yum -y install httpd httpd-devel php php-pear php-devel php-dom php-mbstring php-mysql php-pgsql php-gd
+yum -y install httpd httpd-devel mod_ssl php php-pear php-devel php-dom php-mbstring php-mysql php-pgsql php-gd
 
 # virtual host
 cat <<EOF  > /etc/httpd/conf.d/virtualhosts.conf
@@ -18,7 +18,7 @@ NameVirtualHost *:443
 EOF
 
 # install APC
-yes yes|pecl install apc
+yum -y install php-pecl-apc
 echo "extension=apc.so" > /etc/php.d/apc.ini
 
 # pear/pecl command patch
