@@ -10,8 +10,7 @@ bash bin/install.sh
 mv /etc/fluent-agent-lite.conf /etc/fluent-agent-lite.conf.org
 cat <<EOF > /etc/fluent-agent-lite.conf
 TAG_PREFIX="apache"
-LOGS=$(cat <<EOF
-"EOF"
+LOGS=$(cat <<"EOF"
 access.app /var/log/httpd/access_log
 error.app  /var/log/httpd/error_log
 \EOF
