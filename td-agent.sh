@@ -36,5 +36,5 @@ chmod g+rx /var/log/cron
 chkconfig td-agent on
 
 echo ""
-echo "! Modify /etc/td-agent/td-agent.conf
+echo "! Modify /etc/td-agent/td-agent.conf"
 echo ""
