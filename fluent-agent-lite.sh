@@ -9,10 +9,10 @@ bash bin/install.sh
 # conf
 mv /etc/fluent-agent-lite.conf /etc/fluent-agent-lite.conf.org
 cat <<EOC > /etc/fluent-agent-lite.conf
-TAG_PREFIX="apache"
+TAG_PREFIX="raw.apache"
 LOGS=\$(cat <<"EOF"
-raw.access.app /var/log/httpd/access_log
-raw.error.app  /var/log/httpd/error_log
+access.app /var/log/httpd/access_log
+error.app  /var/log/httpd/error_log
 EOF
 )
 PRIMARY_SERVER="log_server:24224"
