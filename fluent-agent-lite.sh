@@ -8,15 +8,16 @@ bash bin/install.sh
 
 # conf
 mv /etc/fluent-agent-lite.conf /etc/fluent-agent-lite.conf.org
-cat <<EOF > /etc/fluent-agent-lite.conf
+cat <<EOC > /etc/fluent-agent-lite.conf
 TAG_PREFIX="apache"
-LOGS=$(cat <<"EOF"
+LOGS=\$(cat <<"EOF"
 access.app /var/log/httpd/access_log
 error.app  /var/log/httpd/error_log
-\EOF
+EOF
 )
 PRIMARY_SERVER="log_server:24224"
-EOF
+EOC
 
+echo ""
 echo "! Modify /etc/fluent-agent-lite.conf and /etc/init.d/fluent-agent-lite start"
-
+echo ""
