@@ -26,11 +26,12 @@ chmod g+rx /var/log/cron
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-file-alternative
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-rewrite
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-forest
+/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-datacounter
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-numeric-monitor
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-numeric-counter
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-s3
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-config-expander
-/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-file-growthforecast
+/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-growthforecast
 
 /etc/init.d/td-agent start
 chkconfig td-agent on
