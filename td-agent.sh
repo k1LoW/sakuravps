@@ -25,6 +25,7 @@ chmod g+rx /var/log/cron
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-parser
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-file-alternative
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-rewrite
+/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-amplifier-filter
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-forest
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-datacounter
 /usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-numeric-monitor
