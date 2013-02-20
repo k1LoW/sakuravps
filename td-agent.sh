@@ -11,3 +11,4 @@ EOF
 yum update
 yum -y install td-agent
 /etc/init.d/td-agent start
+chkconfig td-agent on
