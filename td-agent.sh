@@ -10,5 +10,13 @@ EOF
 
 yum update
 yum -y install td-agent
+
+# fluent-plugin-file-alternative
+/usr/lib64/fluent/ruby/bin/fluent-gem install fluent-plugin-file-alternative
+
 /etc/init.d/td-agent start
 chkconfig td-agent on
+
+echo ""
+echo "! Modify /etc/td-agent/td-agent.conf
+echo ""
