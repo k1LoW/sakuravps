@@ -8,7 +8,7 @@ baseurl=http://packages.treasure-data.com/redhat/\$basearch
 gpgcheck=0
 EOF
 
-yum update
+yum -y update
 yum -y install td-agent
 
 chgrp td-agent /var/log/httpd/
