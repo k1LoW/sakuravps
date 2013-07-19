@@ -1,0 +1,32 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: install MySQL
+    action: yum pkg=$item state=latest
+    with_items:
+      - mysql
+      - mysql-server
+  - name: config my.cnf
+    action: ini_file dest=/etc/my.cnf section=mysqld option=character-set-server value=utf8 mode=0600
+    notify:
+    - restart MySQL
+  - name: config my.cnf
+    action: ini_file dest=/etc/my.cnf section=mysqld option=default-storage-engine value=innodb mode=0600
+    notify:
+    - restart MySQL
+  - name: config my.cnf
+    action: ini_file dest=/etc/my.cnf section=mysqld value=innodb_file_per_table mode=0600
+    notify:
+    - restart MySQL
+  - name: config my.cnf
+    action: ini_file dest=/etc/my.cnf section=mysqldump option=character-set-server value=utf8 mode=0600
+    notify:
+    - restart MySQL
+  - name: on MySQL
+    action: command /sbin/chkconfig mysqld on
+  - name: check MySQL
+    action: service name=mysqld state=started
+  handlers:
+    - name: restart MySQL
+      action: service name=mysqld state=restarted

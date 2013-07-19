@@ -1,0 +1,23 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: yum update
+    action: command yum -y update
+  - name: config sysyconfig/i18n
+    action: raw sed -i.org -e "s/LANG=\"C\"/LANG=\"ja_JP.UTF-8\"/" /etc/sysconfig/i18n
+  - name: stop ip6tables
+    action: command service ip6tables stop
+  - name: stop services
+    action: command /sbin/chkconfig $item off
+    with_items:
+      - ip6tables
+      - acpid
+      - auditd
+      - haldaemon
+      - lvm2-monitor
+      - mdmonitor
+      - messagebus
+      - netfs
+      - restorecond
+      - smartd

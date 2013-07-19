@@ -1,0 +1,40 @@
+---
+- hosts: all
+  vars:
+    docroot: /var/www/html/
+  sudo: true
+  tasks:
+  - name: install apache
+    action: yum pkg=$item state=latest
+    with_items:
+      - httpd
+      - httpd-devel
+      - mod_ssl
+  - name: config apache
+    action: |
+      raw cat <<EOF  > /etc/httpd/conf.d/virtualhosts.conf
+      NameVirtualHost *:80
+      NameVirtualHost *:443
+      
+      <VirtualHost *:80>
+         DocumentRoot /var/www/html
+         <Directory "/var/www/html/">
+            Options -Indexes FollowSymLinks
+            AllowOverride All
+            DirectoryIndex index.html index.htm index.php
+         </Directory>
+      </VirtualHost>
+      EOF
+    notify:
+    - restart apache
+  - name: on apache
+    action: command /sbin/chkconfig httpd on
+  - name: check apache
+    action: service name=httpd state=started
+  - name: set permission
+    file: path=/var/www/html owner=root group=root mode=0777 force=yes state=directory
+    notify:
+    - restart apache
+  handlers:
+    - name: restart apache
+      action: service name=httpd state=restarted
