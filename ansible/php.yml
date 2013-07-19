@@ -1,0 +1,42 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: install PHP
+    action: yum pkg=$item state=latest
+    with_items:
+      - php
+      - php-pear
+      - php-devel
+      - php-dom
+      - php-mbstring
+      - php-mysql
+      - php-pgsql
+      - php-gd
+  - name: config PHP
+    action: ini_file dest=/etc/php.d/my.ini section=global option=memory_limit value=256M mode=0600
+    notify:
+    - restart apache
+  - name: config PHP
+    action: ini_file dest=/etc/php.d/my.ini section=global option=short_open_tag value=Off mode=0600
+    notify:
+    - restart apache
+  - name: config PHP
+    action: ini_file dest=/etc/php.d/my.ini section=mbstring option=mbstring.language value=Japanese mode=0600
+    notify:
+    - restart apache
+  - name: config PHP
+    action: ini_file dest=/etc/php.d/my.ini section=mbstring option=mbstring.internal_encoding value=utf-8 mode=0600
+    notify:
+    - restart apache
+  - name: config timezone
+    action: ini_file dest=/etc/php.d/timezone.ini section=Date option=date.timezone value=Asia/Tokyo mode=0600
+    notify:
+    - restart apache
+  - name: install APC
+    action: yum pkg=php-pecl-apc state=latest
+    notify:
+    - restart apache
+  handlers:
+    - name: restart apache
+      action: service name=httpd state=restarted
