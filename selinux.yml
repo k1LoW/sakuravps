@@ -1,0 +1,21 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: install lib*-python
+    action: yum pkg=$item state=latest
+    with_items:
+      - libselinux-python
+      - libsemanage-python
+  - name: set SELinux
+    action: selinux policy=targeted state=permissive
+  - name: set SELinux booleans
+    action: seboolean name=httpd_can_network_connect_db state=yes persistent=yes
+    notify:
+    - restart apache
+    - restart MySQL
+  handlers:
+    - name: restart apache
+      action: service name=httpd state=restarted
+    - name: restart MySQL
+      action: service name=mysqld state=restarted

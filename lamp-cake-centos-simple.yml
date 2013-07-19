@@ -1,0 +1,9 @@
+- name: for CakePHP on LAMP
+  hosts: all
+  sudo: true
+- include: common.yml
+- include: iptables-simple.yml
+- include: apache.yml
+- include: php.yml
+- include: mysql.yml
+# - include: selinux.yml
