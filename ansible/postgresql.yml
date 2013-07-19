@@ -1,0 +1,23 @@
+---
+- hosts: all
+  sudo: true
+  tasks:
+  - name: install PostgreSQL
+    action: yum pkg=$item state=latest
+    with_items:
+      - postgresql
+      - postgresql-server
+      - postgresql-contrib
+      - postgresql-tcl
+  - name: initdb
+    action: shell /etc/init.d/postgresql initdb --no-locale -D /var/lib/pgsql/data/ -E UNICODE
+    ignore_errors: yes
+    notify:
+    - restart PostgreSQL
+  - name: on PostgreSQL
+    action: command /sbin/chkconfig postgresql on
+  - name: check PostgreSQL
+    action: service name=postgresql state=started
+  handlers:
+    - name: restart PostgreSQL
+      action: service name=postgresql state=restarted

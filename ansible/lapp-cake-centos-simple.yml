@@ -1,0 +1,9 @@
+- name: for CakePHP on LAPP
+  hosts: all
+  sudo: true
+- include: common.yml
+- include: iptables-simple.yml
+- include: apache.yml
+- include: php.yml
+- include: postgresql.yml
+# - include: selinux.yml
