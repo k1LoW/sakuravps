@@ -15,3 +15,9 @@ This scripts was made based on [http://github.com/tumf/UnitHosting](http://githu
 ``git clone`` this repository. and ``cd ansible/``
 
     echo "***.***.***.***" > ~/ansible_hosts; ansible-playbook lamp-cake-centos-simple.yml -i ~/ansible_hosts -u root --ask-pass
+
+### Ansible Playbooks for CakePHP on LAPP
+
+``git clone`` this repository. and ``cd ansible/``
+
+    echo "***.***.***.***" > ~/ansible_hosts; ansible-playbook lapp-cake-centos-simple.yml -i ~/ansible_hosts -u root --ask-pass
